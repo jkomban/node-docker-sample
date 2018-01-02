@@ -1,5 +1,5 @@
 const expect = require('chai').expect
-const request = require('request')
+const request = require
 const chai = require('chai')
 
 var application = require('../app');
