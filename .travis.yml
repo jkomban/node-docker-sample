@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - "8"
+
+before_install:
+  - travis_retry npm install
+
+script: 
+  -npm test
+
+notifications:
+  email:
+    recipients:
+      - johnpaulkh@gmail.com
+    onsuccess: never
+    onfailure: always
