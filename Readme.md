@@ -1,4 +1,4 @@
-https://travis-ci.org/jkomban/node-docker-sample.svg?branch=master
+<a href src="https://travis-ci.org/jkomban/node-docker-sample.svg?branch=master"></a><br>
 Simple application to workwith <br>
  <p>   Web server - express</p>
  <p>   Database - MongoDB</p>
