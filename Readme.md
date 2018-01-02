@@ -1,5 +1,4 @@
-<a href src="https://travis-ci.org/jkomban/node-docker-sample.svg?branch=master"></a><br>
-[![Build Status](https://travis-ci.org/jkomban/node-docker-sample.svg?branch=master?style=flat-square)](https://travis-ci.org/jkomban/node-docker-sample)
+[![Build Status](https://travis-ci.org/jkomban/node-docker-sample.svg?branch=master)](https://travis-ci.org/jkomban/node-docker-sample)
 Simple application to workwith <br>
  <p>   Web server - express</p>
  <p>   Database - MongoDB</p>
