@@ -1,6 +1,6 @@
 FROM node:latest
 
-WORKDIR C:\\Development_Avecto\\DevSpace\\VS\\sample\\node-docker-test
+WORKDIR ./src
 
 ADD  package*.json ./
 
