@@ -2,11 +2,11 @@ FROM node:latest
 
 WORKDIR .
 
-ADD  package*.json ./
+COPY  package*.json ./
 
 RUN npm install
 
-ADD . .
+COPY . .
 
 EXPOSE 8080
 
