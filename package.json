@@ -4,7 +4,7 @@
   "description": "sample nodejs application with docker",
   "main": "index.js",
   "scripts": {
-    "start": "node app\\index.js",
+    "start": "node app/index.js",
     "test": "./node_modules/.bin/mocha --reporter spec",
     "stop": ""
   },
