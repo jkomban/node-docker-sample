@@ -24,5 +24,5 @@ var logger = new (winston.Logger)({
 // logger.error = function(){
 //     console.log(`Error is here ${JSON.stringify([...arguments])}`)
 // }
-//console.log(logger.level)
+// console.log(logger.level)
 module.exports = logger

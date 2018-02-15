@@ -16,8 +16,8 @@ const ConfigService= require('../config');
 var _db ;
 
 var ConnectDB = async function connect(url) {
-     var connect = await MongoClient.connect(url);
-     return _db = await connect.db(ConfigService.DB);
+    var connect = await MongoClient.connect(url);
+    return _db = await connect.db(ConfigService.DB);
 } 
 
 var getDB = function(){

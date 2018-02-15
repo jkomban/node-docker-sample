@@ -9,22 +9,22 @@ const logger = require('./log')
 
 
 app.use(parser.json());
-app.use(parser.urlencoded({extended:true}));
-var oneApp;
+app.use(parser.urlencoded({ extended: true }));
+// var oneApp;
 // test
 // async IIFE
-async function startAPP(){
+async function startAPP() {
 
-    try{
-        const dbconnect = await DBService.ConnectDB(ConfigService.DB_URL)
+    try {
+        await DBService.ConnectDB(ConfigService.DB_URL)
         logger.debug("DB has been brought up")
         var OS = await util.getOSDetails()
         require('./routes')(app)
         var result = await app.listen(ConfigService.PORT);
         logger.debug(`Application running in port http://${OS.hostname}:${ConfigService.PORT}`)
         return result;
-    }catch(error){
-        logger.error("Error in bringing Up the application",error)
+    } catch (error) {
+        logger.error("Error in bringing Up the application", error)
 
     }
 
@@ -33,6 +33,6 @@ async function startAPP(){
 // module.exports = function start(cb){
 //     startAPP();
 // }
-//startAPP();
+startAPP();
 
-module.exports = startAPP()
+module.exports = app
