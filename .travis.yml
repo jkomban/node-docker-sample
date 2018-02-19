@@ -9,6 +9,8 @@ before_install:
 script: 
   - npm test
 
+after_script: cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+
 notifications:
   email:
     recipients:

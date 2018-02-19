@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app/index.js",
-    "mocha-test":"mocha --reporter spec ./test/**.spec.js",
+    "mocha-test": "mocha --reporter spec ./test/**.spec.js",
     "test": "nyc --reporter=lcov  npm run mocha-test",
     "lint-err": "eslint **/*.js",
     "lint-fix": "eslint --fix **/*.js",
@@ -25,6 +25,7 @@
     "winston": "^2.4.0"
   },
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "eslint": "^4.17.0",
     "eslint-config-google": "^0.9.1",
     "nyc": "^11.4.1"
