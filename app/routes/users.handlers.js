@@ -52,10 +52,30 @@ module.exports.createUser = async (req, res) => {
         const userbody = req.body
         var result = await User.addUser(userbody)
         var responseStatus = (result.insertedCount !== 0) ? 200 : 210
+
         // var responseStatus = (result.insertedCount !== 0) ? 200 : new Error('Couldnt insert any record')
-        res.status(responseStatus).send({ body: 'Added user to the system' })
+        res.status(responseStatus).send(result.ops)
     } catch (Error) {
         logger.debug("Could NOT add user", Error)
         res.status(409).send({ error: reason })
     }
+}
+
+module.exports.deleteUser = async (req, res) => {
+
+    try {
+        var id = parseInt(req.params.id)
+        logger.debug(`Request received to delete user: ${id}`)
+        const resultStrn = await User.deleteUserWithId(id);
+        const result = JSON.parse(resultStrn)
+        var response = result.n !== 1 ? { status: 210, message: `Could not remove user ${id}` } :
+            { status: 200, message: `Successfull removed user ${id}` }
+
+        logger.debug(`Request received to delete user: ${JSON.stringify(response)} `)
+        res.status(response.status).send(response.message)
+    } catch (Error) {
+        logger.error(`Error in deleting user: ${Error}`)
+        res.status(503).send({ error: 'Could not delete user' })
+    }
+
 }

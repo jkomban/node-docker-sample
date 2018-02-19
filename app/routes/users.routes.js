@@ -19,5 +19,8 @@ router.post('/', async (req, res) => {
 
 })
 
+router.delete('/:id', async (req, res) => {
+    UserHandler.deleteUser(req, res)
+})
 
 module.exports = router

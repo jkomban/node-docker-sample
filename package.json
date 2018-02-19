@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app/index.js",
-    "test": "./node_modules/.bin/mocha --reporter spec ./test/**.js",
+    "test": "./node_modules/.bin/mocha --reporter spec ./test/**.spec.js",
     "lint-err": "eslint **/*.js",
     "lint-fix": "eslint --fix **/*.js",
     "stop": ""
