@@ -1,7 +1,0 @@
-{   
-    "DB_URL":"mongodb://jkomban:verysmart@jpkcluster-shard-00-00-kzn26.mongodb.net:27017,jpkcluster-shard-00-01-kzn26.mongodb.net:27017,jpkcluster-shard-00-02-kzn26.mongodb.net:27017/test?ssl=true&replicaSet=jpkcluster-shard-0&authSource=admin",
-    "DB":"myexpense",
-    "USER_COLLECTION": "users",
-    "PORT":8080,
-    "LOG_TO_FIE_OR_CONSOLE": "CONSOLE"
-}

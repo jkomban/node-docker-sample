@@ -7,7 +7,6 @@ const ConfigService = require('./config');
 const app = new express();
 const logger = require('./log')
 
-
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 // var oneApp;

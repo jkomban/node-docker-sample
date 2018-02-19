@@ -1,9 +1,9 @@
-var router = require('express').Router();
 const UserService = require('../db').UserService;
 const User = new UserService();
 const logger = require('../log')
 
-router.get('/users', async (req, res) => {
+
+module.exports.getUsers = async (req, res) => {
 
     try {
         logger.debug("Request received to get first x users")
@@ -14,14 +14,16 @@ router.get('/users', async (req, res) => {
         logger.error(`Error in getting users: ${Error}`)
         res.status(409).send({ error: 'Could not get users list' })
     }
-})
 
-router.get('/users/:id', async (req, res) => {
+}
+
+module.exports.getUsersWithId = async (req, res) => {
     try {
         var id = parseInt(req.params.id)
         logger.debug(`Request received in for user ${id}`)
         const result = await User.getUserWithId(id);
         var responseStatus = result === null ? 204 : 200
+        logger.debug(`Request received in for user ${JSON.stringify(result)} `)
         res.status(responseStatus).send(result)
     } catch (Error) {
         logger.error(`Error in getting user: ${Error}`)
@@ -43,8 +45,9 @@ router.get('/users/:id', async (req, res) => {
             }
         )
     */
-});
-router.post('/user',async (req, res) => {
+}
+
+module.exports.createUser = async (req, res) => {
     try {
         const userbody = req.body
         var result = await User.addUser(userbody)
@@ -55,7 +58,4 @@ router.post('/user',async (req, res) => {
         logger.debug("Could NOT add user", Error)
         res.status(409).send({ error: reason })
     }
-})
-
-
-module.exports = router
+}

@@ -14,7 +14,7 @@ const ConfigService= require('../config');
 *   -> Make Mongo/Maria DB connection based on the configuration
 */
 var _db ;
-
+console.log('..........................................:',ConfigService.DB_URL)
 var ConnectDB = async function connect(url) {
     var connect = await MongoClient.connect(url);
     return _db = await connect.db(ConfigService.DB);
